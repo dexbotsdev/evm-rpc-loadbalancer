@@ -1,9 +1,12 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { CHAINS_ENABLED } from './config';
 import loadBalancer from './loadBalancer';
+import { configDotenv } from 'dotenv'
+
+configDotenv();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 // Middleware for JSON parsing
 app.use(express.json());
