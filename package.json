@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "axios": "^1.7.7",
+    "express": "^4.21.1",
+    "typescript": "^5.6.3"
+  },
+  "scripts": {
+    "start": "tsc && node dist/index.js"
+  }
+}
