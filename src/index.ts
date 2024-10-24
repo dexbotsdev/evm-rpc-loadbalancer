@@ -23,15 +23,11 @@ const validateChainName = (req: Request, res: Response, next: NextFunction): voi
 };
 
 // Route to handle requests for specific chain names
-app.get('/:chainName', validateChainName, (req: Request, res: Response) => {
+app.use('/:chainName', validateChainName, async (req: Request, res: Response) => {
     const { chainName } = req.params;
-    loadBalancer((chainName as any), req, res)
+    await loadBalancer((chainName as any), req, res)
 });
 
-app.post('/:chainName', validateChainName, (req: Request, res: Response) => {
-    const { chainName } = req.params;
-    loadBalancer((chainName as any), req, res)
-});
 
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
