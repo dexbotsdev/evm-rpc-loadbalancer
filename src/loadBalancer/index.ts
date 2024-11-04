@@ -23,11 +23,11 @@ const loadBalancer = async (chainName: TEnabledChain, req: Request, res: Respons
                 url: `${url}`,
                 data: req.body
             });
-            console.log(chainName, url, response.data);
+            console.log(chainName, url, "response sent");
             // Forward the first successful response
             return res.status(response.status).json(response.data);
         } catch (error) {
-            console.log('error in URL:', url);
+            console.log(chainName, url, 'response NOT sent');
         }
     }
 
