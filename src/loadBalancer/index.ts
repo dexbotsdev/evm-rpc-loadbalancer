@@ -2,6 +2,16 @@ import { Request, Response } from 'express';
 import axios from 'axios';
 import { config, TEnabledChain } from '../config';
 
+const consoleReset = "\x1b[0m"
+const consoleBgRed = "\x1b[41m"
+const consoleBgGreen = "\x1b[42m"
+
+const errorLog = (text: any) => {
+    console.log(consoleBgRed, text, consoleReset)
+}
+const successLog = (text: any) => {
+    console.log(consoleBgGreen, text, consoleReset)
+}
 /**
  * Load balancer function to forward RPC requests to multiple URLs.
  * @param chainName - The name of the enabled chain to load balance requests.
@@ -23,11 +33,11 @@ const loadBalancer = async (chainName: TEnabledChain, req: Request, res: Respons
                 url: `${url}`,
                 data: req.body
             });
-            console.log(chainName, url, "response sent");
+            successLog([chainName, url]);
             // Forward the first successful response
             return res.status(response.status).json(response.data);
         } catch (error) {
-            console.log(chainName, url, 'response NOT sent');
+            errorLog([chainName, url]);
         }
     }
 
