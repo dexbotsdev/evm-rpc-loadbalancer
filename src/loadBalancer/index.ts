@@ -5,7 +5,8 @@ import { config, TEnabledChain } from '../config';
 const consoleReset = "\x1b[0m"
 const consoleBgRed = "\x1b[41m"
 const consoleBgGreen = "\x1b[42m"
-const timeout = 30 * 1000 // 30 seconds
+const timeout = 10 * 1000 // 10 seconds
+const optTimeout = 30 * 1000 // 30 seconds
 const errorLog = (text: any) => {
     console.log(consoleBgRed, text, consoleReset)
 }
@@ -32,9 +33,12 @@ const loadBalancer = async (chainName: TEnabledChain, req: Request, res: Respons
                 method,
                 url: `${url}`,
                 data: req.body,
-                timeout
+                timeout: chainName === "optimism" ? optTimeout : timeout
             });
-            successLog([chainName, url]);
+
+            if (index > 0) {
+                successLog([chainName, url]);
+            }
             // Forward the first successful response
             return res.status(response.status).json(response.data);
         } catch (error) {
