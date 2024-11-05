@@ -5,7 +5,7 @@ import { config, TEnabledChain } from '../config';
 const consoleReset = "\x1b[0m"
 const consoleBgRed = "\x1b[41m"
 const consoleBgGreen = "\x1b[42m"
-
+const timeout = 30 * 1000 // 30 seconds
 const errorLog = (text: any) => {
     console.log(consoleBgRed, text, consoleReset)
 }
@@ -31,7 +31,8 @@ const loadBalancer = async (chainName: TEnabledChain, req: Request, res: Respons
             const response = await axios({
                 method,
                 url: `${url}`,
-                data: req.body
+                data: req.body,
+                timeout
             });
             successLog([chainName, url]);
             // Forward the first successful response
