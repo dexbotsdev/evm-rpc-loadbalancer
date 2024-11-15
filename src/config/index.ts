@@ -4,6 +4,7 @@ import { OP } from "./op";
 import { POLYGON } from "./polygon";
 import { FANTOM } from "./fantom";
 import { AVALANCHE } from "./avalanche";
+import { MOONBEAM } from "./moonbeam";
 
 export type TEnabledChain = typeof CHAINS_ENABLED[number];
 export type TConfig = Record<TEnabledChain, string[]>;
@@ -15,7 +16,8 @@ export const CHAINS_ENABLED = [
     "polygon",
     "optimism",
     "fantom",
-    "avalanche"
+    "avalanche",
+    "moonbeam"
 ] as const
 
 
@@ -25,5 +27,6 @@ export const config: TConfig = {
     optimism: OP,
     polygon: POLYGON,
     fantom: FANTOM,
-    avalanche: AVALANCHE
+    avalanche: AVALANCHE,
+    moonbeam: MOONBEAM
 } 
