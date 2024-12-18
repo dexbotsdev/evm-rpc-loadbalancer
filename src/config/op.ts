@@ -1,5 +1,4 @@
 export const OP = [
-    "https://optimism.llamarpc.com",
     "https://mainnet.optimism.io",
     "https://api.zan.top/node/v1/opt/mainnet/public",
     "https://optimism.gateway.tenderly.co",

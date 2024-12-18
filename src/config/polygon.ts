@@ -1,5 +1,4 @@
 export const POLYGON = [
-    "https://polygon.llamarpc.com",
     "https://rpc.ankr.com/polygon",
     "https://polygon-rpc.com",
     "https://polygon.blockpi.network/v1/rpc/public",

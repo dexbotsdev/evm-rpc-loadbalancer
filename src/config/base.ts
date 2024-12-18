@@ -1,5 +1,4 @@
 export const BASE: string[] = [
-    "https://base.llamarpc.com",
     "https://base-mainnet.public.blastapi.io",
     "https://base.blockpi.network/v1/rpc/public",
     "https://base.api.onfinality.io/public",

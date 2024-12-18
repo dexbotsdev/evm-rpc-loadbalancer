@@ -1,5 +1,4 @@
 export const ETH: string[] = [
-    "https://eth.llamarpc.com",
     "https://rpc.ankr.com/eth",
     "https://go.getblock.io/aefd01aa907c4805ba3c00a9e5b48c6b",
     "https://eth-mainnet.nodereal.io/v1/1659dfb40aa24bbb8153a677b98064d7",

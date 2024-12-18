@@ -1,5 +1,4 @@
 export const BSC = [
-    "https://binance.llamarpc.com",
     "https://bnb.rpc.subquery.network/public",
     "https://rpc.ankr.com/bsc",
     "https://bsc.meowrpc.com",
