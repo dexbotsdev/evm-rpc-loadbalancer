@@ -1,6 +1,6 @@
 export const POLYGON = [
     "https://api.zan.top/polygon-mainnet",
-    "https://rpc.ankr.com/polygon",
+    // "https://rpc.ankr.com/polygon",
     // "https://polygon-rpc.com",
     // "https://polygon.blockpi.network/v1/rpc/public",
     // "https://polygon.drpc.org",
