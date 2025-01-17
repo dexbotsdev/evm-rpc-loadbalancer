@@ -6,6 +6,7 @@ import { FANTOM } from "./fantom";
 import { AVALANCHE } from "./avalanche";
 import { MOONBEAM } from "./moonbeam";
 import { ETH } from "./eth";
+import { BITGERT } from "./bitgert";
 
 export type TEnabledChain = typeof CHAINS_ENABLED[number];
 export type TConfig = Record<TEnabledChain, string[]>;
@@ -19,7 +20,8 @@ export const CHAINS_ENABLED = [
     "fantom",
     "avalanche",
     "moonbeam",
-    "eth"
+    "eth",
+    "bitgert"
 ] as const
 
 
@@ -31,5 +33,6 @@ export const config: TConfig = {
     fantom: FANTOM,
     avalanche: AVALANCHE,
     moonbeam: MOONBEAM,
-    eth: ETH
+    eth: ETH,
+    bitgert: BITGERT
 } 
